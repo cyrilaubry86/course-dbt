@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: addresses
+    description: addresses 
+    columns:
+      - name: address_id
+
+  - name: events
+    description: events 
+    columns:
+      - name: created_at
+
+  - name: orders
+    description: orders 
+    columns:
+      - name: address_id
+
+  - name: orders_items
+    description: orders_items 
+    columns:
+      - name: order_id
+
+  - name: products
+    description: products 
+    columns:
+      - name: inventory
+
+  - name: promos
+    description: promos 
+    columns:
+      - name: discount
+
+  - name: users
+    description: users 
+    columns:
+      - name: address_id
