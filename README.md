@@ -43,3 +43,24 @@ select
     count_frequent / count_buyer as repeat_rate
 from dev_db.dbt_cyrilaubry22gmailcom.fact_user_orders;
 ```
+
+
+
+
+Which products had their inventory change from week 1 to week 2? 
+
+```
+PRODUCT_ID
+fb0e8be7-5ac4-4a76-a1fa-2cc4bf0b2d80
+4cda01b9-62e2-46c5-830f-b7f262a58fb1
+55c6a062-5f4a-4a8b-a8e5-05ea5e6715a3
+be49171b-9f72-4fc9-bf7a-9a52e259836b
+```
+
+```sql
+select
+    product_id
+from dev_db.dbt_cyrilaubry22gmailcom.products_snapshot
+group by 1
+having count(inventory) > 1;
+```
