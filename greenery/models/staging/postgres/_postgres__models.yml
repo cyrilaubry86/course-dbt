@@ -1,37 +1,37 @@
 version: 2
 
 models:
-  - name: addresses
-    description: addresses 
+  - name: stg_addresses
+    description: 'model with addresses'
     columns:
       - name: address_id
+        description: ''
+        tests:
+          - not_null
+          - unique
 
-  - name: events
-    description: events 
-    columns:
-      - name: created_at
+      - name: address
+        description: ''
 
-  - name: orders
-    description: orders 
-    columns:
-      - name: address_id
+      - name: zipcode
+        description: ''
+        tests:
+          - not_null
 
-  - name: orders_items
-    description: orders_items 
-    columns:
-      - name: order_id
+  - name: stg_events 
+    description: ''
 
-  - name: products
-    description: products 
-    columns:
-      - name: inventory
+  - name: stg_orders
+    description: ''
 
-  - name: promos
-    description: promos 
-    columns:
-      - name: discount
+  - name: stg_orders_items
+    description: ''
 
-  - name: users
-    description: users 
-    columns:
-      - name: address_id
+  - name: stg_products
+    description: ''
+
+  - name: stg_promos
+    description: ''
+
+  - name: stg_users
+    description: ''

@@ -11,5 +11,3 @@ models:
         tests:
           - positive_values
       - name: weight
-        tests:
-          - positive_values

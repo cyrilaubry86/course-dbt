@@ -31,3 +31,15 @@ Note: you should consider a purchase to be a single order. In other words, if a 
 
 On average, how many unique sessions do we have per hour?
 39.46
+
+
+
+
+Repeat rate is 0.798387
+```sql
+select
+    sum(case when is_buyer then 1 else 0 end) as count_buyer,
+    sum(case when is_frequent_buyer then 1 else 0 end) as count_frequent,
+    count_frequent / count_buyer as repeat_rate
+from dev_db.dbt_cyrilaubry22gmailcom.fact_user_orders;
+```
