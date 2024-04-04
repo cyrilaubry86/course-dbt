@@ -4,10 +4,7 @@ select
     coalesce(events.product_id, order_items.product_id) as product_id,
     timing.session_started_at,
     timing.session_ended_at,
-    sum(case when events.event_type = 'page_view' then 1 else 0 end) as page_view,
-    sum(case when events.event_type = 'add_to_cart' then 1 else 0 end) as add_to_cart,
-    sum(case when events.event_type = 'checkout' then 1 else 0 end) as checkout,
-    sum(case when events.event_type = 'package_shipped' then 1 else 0 end) as package_shipped,
+    {{ event_type('stg_events', 'event_type') }}
     datediff('minute', timing.session_started_at, timing.session_ended_at) as session_length_minutes
 from {{ ref('stg_events')}} as events
 left join {{ ref('stg_order_items')}} as order_items
